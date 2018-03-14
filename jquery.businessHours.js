@@ -44,6 +44,8 @@
             '<div class="operationDayTimeContainer">' +
             '<div class="operationTime"><input type="text" name="startTime" class="mini-time operationTimeFrom" value=""/></div>' +
             '<div class="operationTime"><input type="text" name="endTime" class="mini-time operationTimeTill" value=""/></div>' +
+            '<div class="operationTime"><input type="text" name="startTime2" class="mini-time operationTimeFrom" value=""/></div>' +
+            '<div class="operationTime"><input type="text" name="endTime2" class="mini-time operationTimeTill" value=""/></div>' +
             '</div></div>'
         };
 
@@ -87,7 +89,9 @@
                             data.push({
                                 isActive: isWorkingDay,
                                 timeFrom: isWorkingDay ? dayContainer.find("[name='startTime']").val() : null,
-                                timeTill: isWorkingDay ? dayContainer.find("[name='endTime']").val() : null
+                                timeTill: isWorkingDay ? dayContainer.find("[name='endTime']").val() : null,
+                                timeFrom2: isWorkingDay ? dayContainer.find("[name='startTime2']").val() : null,
+                                timeTill2: isWorkingDay ? dayContainer.find("[name='endTime2']").val() : null
                             });
                         });
 
@@ -118,6 +122,12 @@
 
                     var endTime = $this.getValueOrDefault(day.timeTill, options.defaultOperationTimeTill);
                     initTimeBox(operationDayNode.find('[name="endTime"]'), endTime, options.inputDisabled);
+
+                    var timeFrom2 = $this.getValueOrDefault(day.timeFrom, options.defaultOperationTimeFrom);
+                    initTimeBox(operationDayNode.find('[name="startTime2"]'), timeFrom, options.inputDisabled);
+
+                    var endTime2 = $this.getValueOrDefault(day.timeTill, options.defaultOperationTimeTill);
+                    initTimeBox(operationDayNode.find('[name="endTime2"]'), endTime, options.inputDisabled);
                 });
 
                 container.find(".operationState").change(function() {

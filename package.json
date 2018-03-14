@@ -10,12 +10,16 @@
     "license": "APACHE",
     "dependencies": {
         "jquery": ">=1.7",
-        "jt.timepicker": "~1.4.13"
+        "timepicker": "^1.11.12"
     },
     "devDependencies": {
-        "grunt": "~0.4.1",
+        "grunt": "^0.4.5",
         "grunt-contrib-uglify": "~0.2.2"
     },
     "description": "jQuery plugin allows you to easy show & manage business hours",
-    "keywords": ["jQuery", "plugin", "business hours"]
+    "keywords": [
+        "jQuery",
+        "plugin",
+        "business hours"
+    ]
 }
